@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>주사위</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+        href="/static/assets/css/home.css"
+        th:href="@{/assets/css/home.css}">
+  <!-- 자바스크립트 가져올떄 defer 쓰기 -->
+<!--
+       <script defer src="테스트주소"></script>
+-->
+</head>
+<body>
+<h1>주사위게임</h1>
+<hr>
+<div th:if="${lastDiceNumber == 0}">
+  <h1>주사위를 굴려주세요</h1>
+</div>
+<div th:if="${lastDiceNumber == 1}">
+  <i class="fa-solid fa-dice-one"></i>
+</div>
+<div th:if="${lastDiceNumber == 2}">
+  <i class="fa-solid fa-dice-two"></i>
+</div>
+<div th:if="${lastDiceNumber == 3}">
+  <i class="fa-solid fa-dice-three"></i>
+</div>
+<div th:if="${lastDiceNumber == 4}">
+  <i class="fa-solid fa-dice-four"></i>
+</div>
+<div th:if="${lastDiceNumber == 5}">
+  <i class="fa-solid fa-dice-five"></i>
+</div>
+<div th:if="${lastDiceNumber == 6}">
+  <i class="fa-solid fa-dice-six"></i>
+</div>
+
+<div class="dice-wrap">
+  <div class="number-text">숫자 통계</div>
+  <div class="number-head">
+    <div class="number-head-item">
+      <td th:text="${diceStore[1]}">0</td>
+    </div>
+    <div class="number-head-item">
+      <td th:text="${diceStore[1]}">0</td>
+    </div>
+    <div class="number-head-item">
+      <td th:text="${diceStore[1]}">0</td>
+    </div>
+    <div class="number-head-item">
+      <td th:text="${diceStore[1]}">0</td>
+    </div>
+    <div class="number-head-item">
+      <td th:text="${diceStore[1]}">0</td>
+    </div>
+    <div class="number-head-item">
+      <td th:text="${diceStore[1]}">0</td>
+    </div>
+  </div>
+  <div class="number-body">
+
+
+  </div>
+
+</div>
+
+
+
+<h2>숫자 통계</h2>
+<table border="1" width="50%">
+  <thead>
+  <tr align = "center">
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+    <th>6</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr align = "center">
+
+    <td th:text="${diceStore[2]}">0</td>
+    <td th:text="${diceStore[3]}">0</td>
+    <td th:text="${diceStore[4]}">0</td>
+    <td th:text="${diceStore[5]}">0</td>
+    <td th:text="${diceStore[6]}">0</td>
+  </tr>
+  </tbody>
+</table>
+<div class="btn-wrap">
+  <button class="btn roll-btn" type="button" th:onclick="|location.href='@{/roll}'|">굴리기</button>
+  <button class="btn clear-btn" type="button" th:onclick="|location.href='@{/clear}'|">초기화</button>
+</div>
+
+
+</body>
+</html>
