@@ -37,6 +37,9 @@ public class DiceService {
         return diceRepository.storeGet();
     }
 
+    /**
+     *  db store 초기화
+     */
     public void diceStoreClear() {
         diceRepository.clearStore();
     }
