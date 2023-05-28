@@ -1,5 +1,6 @@
 package dice.dice1.controller;
 
+import dice.dice1.domain.TestDomain;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
