@@ -36,6 +36,7 @@ public class DiceRepository {
         return lastNumber;
     }
 
+
     public void lastNumberSave(DiceDomain diceDomain) {
         lastNumber = diceDomain.getDiceNumber();
     }
